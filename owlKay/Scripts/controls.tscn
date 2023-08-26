@@ -1,0 +1,173 @@
+[gd_scene load_steps=20 format=3 uid="uid://crjxfsy6s48sc"]
+
+[ext_resource type="Texture2D" uid="uid://gcr00pxe6uhs" path="res://Owlet_Monster_Jump_8.png" id="1_sints"]
+[ext_resource type="Texture2D" uid="uid://bhb0kf0qa5qju" path="res://Owlet_Monster_Walk_6.png" id="2_4q5v8"]
+[ext_resource type="FontFile" uid="uid://b1nao844gwx1i" path="res://m5x7.ttf" id="3_gxhy5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rwc2"]
+atlas = ExtResource("1_sints")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_724p6"]
+atlas = ExtResource("1_sints")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmf8h"]
+atlas = ExtResource("1_sints")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqded"]
+atlas = ExtResource("1_sints")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2egu"]
+atlas = ExtResource("1_sints")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aevsn"]
+atlas = ExtResource("1_sints")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmodx"]
+atlas = ExtResource("1_sints")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grrxy"]
+atlas = ExtResource("1_sints")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kumen"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rwc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_724p6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmf8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqded")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2egu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aevsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmodx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grrxy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08t3m"]
+atlas = ExtResource("2_4q5v8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0np64"]
+atlas = ExtResource("2_4q5v8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjr8o"]
+atlas = ExtResource("2_4q5v8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwy15"]
+atlas = ExtResource("2_4q5v8")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg8ry"]
+atlas = ExtResource("2_4q5v8")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtdad"]
+atlas = ExtResource("2_4q5v8")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4j8k5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08t3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0np64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjr8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwy15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg8ry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtdad")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(64, 576)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_kumen")
+autoplay = "default"
+frame_progress = 0.714568
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(64, 312)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_4j8k5")
+autoplay = "default"
+frame_progress = 0.0787219
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(64, 96)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_kumen")
+autoplay = "default"
+frame_progress = 0.384518
+
+[node name="Label" type="Label" parent="."]
+offset_left = 231.0
+offset_top = 321.0
+offset_right = 319.0
+offset_bottom = 356.0
+theme_override_fonts/font = ExtResource("3_gxhy5")
+theme_override_font_sizes/font_size = 40
+text = "Setas "
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 173.0
+offset_top = 105.0
+offset_right = 394.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("3_gxhy5")
+theme_override_font_sizes/font_size = 40
+text = "Barra de Espaço"
+uppercase = true
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 136.0
+offset_top = 587.0
+offset_right = 455.0
+offset_bottom = 614.0
+theme_override_fonts/font = ExtResource("3_gxhy5")
+theme_override_font_sizes/font_size = 29
+text = "Barra de Espaço 2x (Pulo duplo)"
+uppercase = true

@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8atxpret3sr6"]
+
+[ext_resource type="Script" path="res://Scripts/spike.gd" id="1_e2f86"]
+[ext_resource type="Texture2D" uid="uid://dmp8sm3g2gdbh" path="res://Sprites/16-bit-spike-Sheet.png" id="1_fdw1p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ba2w"]
+atlas = ExtResource("1_fdw1p")
+region = Rect2(0, 0, 15, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4q8is"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ba2w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_woul5"]
+radius = 4.0
+height = 18.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3a04"]
+size = Vector2(15, 11.5)
+
+[node name="Spike" type="Node2D"]
+script = ExtResource("1_e2f86")
+
+[node name="SpikeArea" type="Area2D" parent="."]
+scale = Vector2(0.38831, 0.366356)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SpikeArea"]
+scale = Vector2(1.56667, 1.56667)
+sprite_frames = SubResource("SpriteFrames_4q8is")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeArea"]
+position = Vector2(1, 2)
+shape = SubResource("CapsuleShape2D_woul5")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SpikeArea"]
+position = Vector2(0.5, 6.75)
+scale = Vector2(0.927711, 0.924593)
+shape = SubResource("RectangleShape2D_g3a04")
+one_way_collision = true
+
+[connection signal="body_entered" from="SpikeArea" to="." method="_on_spike_area_body_entered"]

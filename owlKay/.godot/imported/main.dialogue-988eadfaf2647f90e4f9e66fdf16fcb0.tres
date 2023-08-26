@@ -1,0 +1,203 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_n04g8"]
+
+[resource]
+script = ExtResource("1_n04g8")
+titles = {
+"main": "2"
+}
+character_names = PackedStringArray("Mush", "Owl")
+first_title = "2"
+lines = {
+"1": {
+"next_id": "2",
+"text": "main",
+"type": "title"
+},
+"10": {
+"character": "Mush",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "11",
+"parent_id": "7",
+"text": "Beleza, você teve Fernando Prass no seu time?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Beleza, você teve Fernando Prass no seu time?",
+"type": "dialogue"
+},
+"11": {
+"character": "Owl",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "12",
+"parent_id": "7",
+"text": "Não, mas eu sou o primeiro campeão brasileiro.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Não, mas eu sou o primeiro campeão brasileiro.",
+"type": "dialogue"
+},
+"12": {
+"character": "Mush",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "19",
+"parent_id": "7",
+"text": "Beleza. FODASE!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Beleza. FODASE!",
+"type": "dialogue"
+},
+"13": {
+"next_id": "14",
+"next_id_after": "19",
+"parent_id": "2",
+"text": "Quem é você?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Quem é você?",
+"type": "response"
+},
+"14": {
+"character": "Mush",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "19",
+"parent_id": "13",
+"text": "Sou o mush, serei seu guia aqui em laurocity. E não venha com xenhenhen leitinho!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Sou o mush, serei seu guia aqui em laurocity. E não venha com xenhenhen leitinho!",
+"type": "dialogue"
+},
+"15": {
+"next_id": "2",
+"next_id_after": "19",
+"parent_id": "2",
+"text": "Conversar mais uma vez",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Conversar mais uma vez",
+"type": "response"
+},
+"16": {
+"next_id": "17",
+"next_id_after": "19",
+"parent_id": "2",
+"text": "Fim de conversa",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Fim de conversa",
+"type": "response"
+},
+"17": {
+"character": "Mush",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "18",
+"parent_id": "16",
+"text": "Beleza vei, se quiser largar o doce só me chamar!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Beleza vei, se quiser largar o doce só me chamar!",
+"type": "dialogue"
+},
+"18": {
+"is_snippet": false,
+"next_id": "end",
+"parent_id": "16",
+"type": "goto"
+},
+"19": {
+"is_snippet": false,
+"next_id": "end",
+"parent_id": "2",
+"type": "goto"
+},
+"2": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "Global"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "initialDialogue"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "bool",
+"value": true
+}, {
+"type": "colon"
+}])
+},
+"next_conditional_id": "end!",
+"next_id": "3",
+"next_id_after": "end!",
+"type": "condition"
+},
+"3": {
+"character": "Mush",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "4",
+"parent_id": "2",
+"text": "[[Oi|Eae|Fala menor]], bem vindo a Laurocity! Não, aqui não é Salvador :/",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[Oi|Eae|Fala menor]], bem vindo a Laurocity! Não, aqui não é Salvador :/",
+"type": "dialogue"
+},
+"4": {
+"character": "Mush",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "5",
+"parent_id": "2",
+"text": "O que quer saber?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "O que quer saber?",
+"type": "dialogue"
+},
+"5": {
+"next_id": "6",
+"next_id_after": "19",
+"parent_id": "2",
+"responses": PackedStringArray("5", "13", "15", "16"),
+"text": "O que eu faço aqui?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "O que eu faço aqui?",
+"type": "response"
+},
+"6": {
+"character": "Mush",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "7",
+"parent_id": "5",
+"text": "Boa pergunta. Você foi enviado com a missão de recolher todas as moedas espalhadas pelo mundo e por fim derrotar o vilão Binha do Bahia.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Boa pergunta. Você foi enviado com a missão de recolher todas as moedas espalhadas pelo mundo e por fim derrotar o vilão Binha do Bahia.",
+"type": "dialogue"
+},
+"7": {
+"next_id": "8",
+"next_id_after": "19",
+"parent_id": "5",
+"responses": PackedStringArray("7"),
+"text": "Eu até acho que o Bahia é o maior time neste mundo. E você?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Eu até acho que o Bahia é o maior time neste mundo. E você?",
+"type": "response"
+},
+"8": {
+"character": "Mush",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "9",
+"parent_id": "7",
+"text": "Eu sou palmeiras.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Eu sou palmeiras.",
+"type": "dialogue"
+},
+"9": {
+"character": "Owl",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "10",
+"parent_id": "7",
+"text": "kkkkkkkk coé, naão tem mundial :P",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "kkkkkkkk coé, naão tem mundial :P",
+"type": "dialogue"
+}
+}
+metadata/dialogue_manager_version = "2.16.0"

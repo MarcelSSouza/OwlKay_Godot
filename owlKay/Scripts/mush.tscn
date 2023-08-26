@@ -1,0 +1,96 @@
+[gd_scene load_steps=14 format=3 uid="uid://dh3uqrt0iq1i6"]
+
+[ext_resource type="Script" path="res://Scripts/mush.gd" id="1_b1gnf"]
+[ext_resource type="Texture2D" uid="uid://c8etkli3qhar5" path="res://cute mushroom idle.png" id="1_bw73y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbya0"]
+atlas = ExtResource("1_bw73y")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2xsq"]
+atlas = ExtResource("1_bw73y")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wli3k"]
+atlas = ExtResource("1_bw73y")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ibaf"]
+atlas = ExtResource("1_bw73y")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y85hl"]
+atlas = ExtResource("1_bw73y")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqqpc"]
+atlas = ExtResource("1_bw73y")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1r68"]
+atlas = ExtResource("1_bw73y")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsmoh"]
+atlas = ExtResource("1_bw73y")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2euwu"]
+atlas = ExtResource("1_bw73y")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_da8qj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbya0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2xsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wli3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ibaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y85hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqqpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1r68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsmoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2euwu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rkjg"]
+radius = 31.0161
+
+[node name="Mush" type="Node2D"]
+script = ExtResource("1_b1gnf")
+
+[node name="MushArea" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MushArea"]
+position = Vector2(11.5, 9)
+scale = Vector2(-0.749905, 0.703426)
+sprite_frames = SubResource("SpriteFrames_da8qj")
+autoplay = "default"
+frame_progress = 0.109103
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MushArea"]
+position = Vector2(11, 9)
+shape = SubResource("CircleShape2D_3rkjg")
+
+[connection signal="body_entered" from="MushArea" to="." method="_on_mush_area_body_entered"]

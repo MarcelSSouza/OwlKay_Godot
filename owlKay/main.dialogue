@@ -1,0 +1,19 @@
+~ main
+if Global.initialDialogue == true:
+	Mush: [[Oi|Eae|Fala menor]], bem vindo a Laurocity! Não, aqui não é Salvador :/
+	Mush: O que quer saber?
+	- O que eu faço aqui?
+		Mush: Boa pergunta. Você foi enviado com a missão de recolher todas as moedas espalhadas pelo mundo e por fim derrotar o vilão Binha do Bahia.
+		- Eu até acho que o Bahia é o maior time neste mundo. E você?
+			Mush: Eu sou palmeiras.
+			Owl: kkkkkkkk coé, naão tem mundial :P
+			Mush: Beleza, você teve Fernando Prass no seu time?
+			Owl: Não, mas eu sou o primeiro campeão brasileiro.
+			Mush: Beleza. FODASE!
+	- Quem é você?
+		Mush: Sou o mush, serei seu guia aqui em laurocity. E não venha com xenhenhen leitinho!
+	- Conversar mais uma vez => main
+	- Fim de conversa 
+		Mush: Beleza vei, se quiser largar o doce só me chamar! 
+		=> END
+	=> END

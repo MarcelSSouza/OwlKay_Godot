@@ -1,0 +1,126 @@
+[gd_scene load_steps=13 format=3 uid="uid://dsmlum6ymm8j6"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_eq35l"]
+[ext_resource type="FontFile" uid="uid://b1nao844gwx1i" path="res://Fonts/m5x7.ttf" id="2_kelbs"]
+[ext_resource type="Texture2D" uid="uid://83nvg0l36a61" path="res://Sprites/Large Buttons/Play Button.png" id="3_5gp5f"]
+[ext_resource type="Texture2D" uid="uid://c766xp1xhdauu" path="res://Sprites/Large Buttons/Controls Button.png" id="4_wbe7l"]
+[ext_resource type="Texture2D" uid="uid://c7buylicyxpp3" path="res://Sprites/Large Buttons/Exit Button.png" id="5_geiql"]
+[ext_resource type="Texture2D" uid="uid://c8m8r6gwuuj3f" path="res://Sprites/Owlet_Monster_Idle_4.png" id="6_whoto"]
+[ext_resource type="AudioStream" uid="uid://vwqtkfa0wabx" path="res://Songs/awesomeness.wav" id="7_l2nro"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwnva"]
+atlas = ExtResource("6_whoto")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n21ku"]
+atlas = ExtResource("6_whoto")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j82q"]
+atlas = ExtResource("6_whoto")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl1v3"]
+atlas = ExtResource("6_whoto")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lqquv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwnva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n21ku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j82q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl1v3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Menu" type="Node2D"]
+position = Vector2(157, 244)
+scale = Vector2(1.49403, 1.96054)
+script = ExtResource("1_eq35l")
+metadata/_edit_group_ = true
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 7.36264
+offset_top = -119.865
+offset_right = 123.363
+offset_bottom = -93.8649
+scale = Vector2(1.00469, 1)
+theme_override_fonts/font = ExtResource("2_kelbs")
+theme_override_font_sizes/font_size = 27
+text = "Owl Kay"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = -24.0959
+offset_top = 45.9056
+offset_right = 1428.9
+offset_bottom = 593.906
+scale = Vector2(0.122004, 0.0762385)
+icon = ExtResource("3_5gp5f")
+flat = true
+text_overrun_behavior = 2
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="."]
+offset_left = -23.4266
+offset_top = 89.2611
+offset_right = 1429.57
+offset_bottom = 637.261
+scale = Vector2(0.122004, 0.0762385)
+icon = ExtResource("4_wbe7l")
+flat = true
+text_overrun_behavior = 2
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -25.4346
+offset_top = 135.167
+offset_right = 1427.57
+offset_bottom = 683.167
+scale = Vector2(0.122004, 0.0762385)
+icon = ExtResource("5_geiql")
+flat = true
+text_overrun_behavior = 2
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -2.008
+offset_top = 199.945
+offset_right = 123.992
+offset_bottom = 225.945
+theme_override_fonts/font = ExtResource("2_kelbs")
+theme_override_font_sizes/font_size = 25
+text = "Feito por Marcel"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-96.3835, -34.6843)
+scale = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(56.8931, 6.63081)
+sprite_frames = SubResource("SpriteFrames_lqquv")
+autoplay = "default"
+frame_progress = 0.929446
+
+[node name="theme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_l2nro")
+volume_db = -8.432
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_pressed_controls"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_pressed_exit"]
